@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 
@@ -18,6 +19,7 @@ public class Usuario {
 	private String nome;
 	
 	@NotBlank(message = "Informe o email do usuário!")
+	@Email
 	private String email;
 	
 	@NotBlank(message = "Informe o cpf do usuário!")
@@ -25,6 +27,13 @@ public class Usuario {
 	
 	@NotBlank(message = "Informe a data de nascimento do usuário!")
 	private String dataNascimento;
+	
+	private String sexo;
+	
+	private String telefone;
+	
+	private String nacionalidade;
+	
 
 	public Long getId() {
 		return id;
@@ -64,6 +73,30 @@ public class Usuario {
 
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
 	}
 
 	@Override

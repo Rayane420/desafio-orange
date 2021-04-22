@@ -1,11 +1,19 @@
 package com.desafio.orange.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+
 
 
 @Entity
@@ -15,25 +23,29 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "Informe o nome do usuário!")
+	@NotBlank(message = "Por gentileza Informe o nome do usuário!")
 	private String nome;
 	
-	@NotBlank(message = "Informe o email do usuário!")
 	@Email
+	@Column(unique = true)
+	@NotBlank(message = "Por gentileza Informe o email!")
 	private String email;
 	
-	@NotBlank(message = "Informe o cpf do usuário!")
+	@Column(unique = true)
+	@NotBlank(message = "Por gentileza Informe o cpf!")
 	private String cpf;
 	
-	@NotBlank(message = "Informe a data de nascimento do usuário!")
+	@NotBlank(message = "Por gentileza Informe a data de nascimento do usuário!")
 	private String dataNascimento;
 	
 	private String sexo;
-	
 	private String telefone;
-	
 	private String nacionalidade;
 	
+		
+	//ligação um para muitos mapeado pelo usuario
+	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+	private List<Endereco> enderecos = new ArrayList<Endereco>();
 
 	public Long getId() {
 		return id;
@@ -97,6 +109,16 @@ public class Usuario {
 
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
+	}
+	
+	
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	@Override

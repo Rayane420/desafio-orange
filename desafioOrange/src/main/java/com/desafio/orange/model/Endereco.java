@@ -1,12 +1,18 @@
 package com.desafio.orange.model;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -19,7 +25,7 @@ public class Endereco {
 	@NotBlank(message = "Por gentileza Informe o Logradouro!")
 	private String logradouro;
 	
-	@NotBlank(message = "Por gentileza Informe o numero!")
+	//@NotEmpty(message = "Por gentileza Informe o numero!")
 	private int numero;
 	
 	@NotBlank(message = "Por gentileza Informe o complemento!")
@@ -38,7 +44,9 @@ public class Endereco {
 	private String CEP;
 
 	//ligação muitos para um
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@ManyToOne(optional = false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	@JsonIgnore
 	private Usuario usuario;
 	
 	

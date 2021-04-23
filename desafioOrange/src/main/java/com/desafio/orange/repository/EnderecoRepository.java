@@ -7,5 +7,6 @@ import com.desafio.orange.model.Endereco;
 
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Long>{
-
+	
+	Endereco findById(long id);
 }

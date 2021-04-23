@@ -1,7 +1,6 @@
 package com.desafio.orange.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio.orange.model.Endereco;
 import com.desafio.orange.repository.EnderecoRepository;
-import com.desafio.orange.repository.UsuarioRepository;
 
 
 

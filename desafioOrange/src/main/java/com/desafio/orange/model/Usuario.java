@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 
 
@@ -35,6 +37,7 @@ public class Usuario {
 	private String cpf;
 	
 	@NotBlank(message = "Por gentileza Informe a data de nascimento do usuário!")
+	@JsonFormat(pattern = "dd/MM/yyyy") 
 	private String dataNascimento;
 	
 	private String sexo;

@@ -14,3 +14,4 @@ PostgreSQL
 
 Postman: Para testar as nossas requisições 
 
+![Print da tela do postman listando um Usuário](https://github.com/Rayane420/desafio-orange/blob/main/Postman.png)

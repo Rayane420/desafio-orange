@@ -6,11 +6,11 @@ Desafio realizado para a segunda fase do processo seletivo da Orange Talents
 Criar uma API REST para realizar controle de endereços de usuários.
 
 #### 🤖 Tecnologias utilizadas:
-Spring Data JPA
-Spring Web: Cria aplicações web e restful usando padrão MVC com o Apache Tomcat como servidor. 
-Spring Boot DevTools 
-Hibernate validator
-PostgreSQL 
+<li>Spring Data JPA</li>
+<li>Spring Web: Cria aplicações web e restful usando padrão MVC com o Apache Tomcat como servidor. </li>
+<li>Spring Boot DevTools </li>
+<li>Hibernate validator</li>
+<li>PostgreSQL </li>
 
 Postman: Para testar as nossas requisições 
 

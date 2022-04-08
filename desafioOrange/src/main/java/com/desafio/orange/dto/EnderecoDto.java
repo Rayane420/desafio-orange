@@ -51,7 +51,7 @@ public class EnderecoDto {
         this.CEP = CEP;
     }
 
-    //Convertendo entidade na classe Dto
+    //Convertendo entidade para classe Dto
     public static List<EnderecoDto> converter(List<Endereco> enderecos) {
         return enderecos.stream().map(EnderecoDto::new).collect(Collectors.toList());
     }

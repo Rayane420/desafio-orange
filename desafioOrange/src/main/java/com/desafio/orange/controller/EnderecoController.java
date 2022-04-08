@@ -21,12 +21,14 @@ public class EnderecoController {
 	private EnderecoRepository enderecoRepository;
 
 
+	//Listando todos os endereços
 	@GetMapping
 	List<EnderecoDto> listar(){
 		List<Endereco> enderecos = enderecoRepository.findAll();
 		return EnderecoDto.converter(enderecos);
 	}
 
+	//Listando endereço por id
 	@GetMapping("/{id}")
 	DetalharEnderecoDto detalhar(@PathVariable Long id){
 		Endereco endereco = enderecoRepository.getById(id);

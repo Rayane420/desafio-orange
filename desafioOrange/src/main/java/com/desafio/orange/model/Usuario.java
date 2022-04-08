@@ -3,13 +3,7 @@ package com.desafio.orange.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -49,8 +43,8 @@ public class Usuario {
 	//ligação um para muitos mapeado pelo usuario
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Endereco> enderecos = new ArrayList<>();
-	
-	
+
+
 	public Long getId() {
 		return id;
 	}
@@ -90,7 +84,7 @@ public class Usuario {
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
+
 	public String getSexo() {
 		return sexo;
 	}
@@ -114,8 +108,8 @@ public class Usuario {
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
 	}
-	
-	
+
+
 
 	public List<Endereco> getEnderecos() {
 		return enderecos;
@@ -149,7 +143,7 @@ public class Usuario {
 			return false;
 		return true;
 	}
-	
-	
-	
+
+
+
 }

@@ -1,5 +1,9 @@
 package com.desafio.orange.controller;
 
+import com.desafio.orange.dto.DetalharUsuarioDto;
+
+import com.desafio.orange.dto.UsuarioDto;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,29 +17,40 @@ import org.springframework.web.bind.annotation.RestController;
 import com.desafio.orange.model.Usuario;
 import com.desafio.orange.repository.UsuarioRepository;
 
+import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/usuarios")
 public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
-	
-	/** Cadastro de Usuários ---------*/
-	@PostMapping("/usuario")
+
+	//Listando todos os usuários
+	@GetMapping
+	List<UsuarioDto> listar(){
+		List<Usuario> usuarios = usuarioRepository.findAll();
+		return UsuarioDto.converter(usuarios);
+	}
+
+	//Detalhando Endereços por Usuário
+	@GetMapping("/enderecos/{id}")
+	DetalharUsuarioDto detalhar(@PathVariable Long id){
+		Usuario usuario = usuarioRepository.getById(id);
+		return new DetalharUsuarioDto(usuario);
+	}
+
+
+
+
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario salvar(@RequestBody Usuario usuario) {
+	Usuario salvar(@RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
 	
-	/** Listando Usuários e seus endereços ---------*/
-	@GetMapping("/usuario/{id}")
-		public Usuario listaPorId(@PathVariable long id){ 
-			return usuarioRepository.findById(id);
-		
-		}
+
 	
 	
 }

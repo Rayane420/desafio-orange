@@ -28,6 +28,7 @@ public class DetalharEnderecoDto {
         this.usuario = endereco.getUsuario().getNome();
     }
 
+
     public Long getId() {
         return id;
     }

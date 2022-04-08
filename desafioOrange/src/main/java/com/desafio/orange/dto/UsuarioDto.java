@@ -2,6 +2,9 @@ package com.desafio.orange.dto;
 
 import com.desafio.orange.model.Usuario;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class UsuarioDto {
 
     private Long id;
@@ -46,5 +49,10 @@ public class UsuarioDto {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    //Convertendo entidade para classe Dto
+    public static List<UsuarioDto> converter(List<Usuario> usuarios) {
+        return usuarios.stream().map(UsuarioDto::new).collect(Collectors.toList());
     }
 }

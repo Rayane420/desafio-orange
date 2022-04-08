@@ -1,10 +1,12 @@
+com\desafio\orange\dto\EnderecoDto.class
+com\desafio\orange\repository\UsuarioRepository.class
+com\desafio\orange\form\EnderecoForm.class
 com\desafio\orange\DesafioOrangeApplication.class
+com\desafio\orange\dto\UsuarioDto.class
 com\desafio\orange\model\Usuario.class
 com\desafio\orange\model\Endereco.class
 com\desafio\orange\dto\DetalharEnderecoDto.class
-com\desafio\orange\dto\EnderecoDto.class
-com\desafio\orange\repository\UsuarioRepository.class
 com\desafio\orange\repository\EnderecoRepository.class
 com\desafio\orange\controller\EnderecoController.class
-com\desafio\orange\form\EnderecoForm.class
+com\desafio\orange\dto\DetalharUsuarioDto.class
 com\desafio\orange\controller\UsuarioController.class

@@ -3,9 +3,8 @@ C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioO
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\model\Endereco.java
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\dto\EnderecoDto.java
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\form\EnderecoForm.java
-C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\exceptions\ApiExceptionHandler.java
-C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\exceptions\MensagemErro.java
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\repository\UsuarioRepository.java
+C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\dto\DetalharEnderecoDto.java
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\controller\EnderecoController.java
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\controller\UsuarioController.java
 C:\Users\Cliente\Documents\Rayane\Codando\Orange talents\desafio-orange\desafioOrange\src\main\java\com\desafio\orange\repository\EnderecoRepository.java

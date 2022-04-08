@@ -1,5 +1,6 @@
 package com.desafio.orange.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -47,7 +48,7 @@ public class Usuario {
 		
 	//ligação um para muitos mapeado pelo usuario
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Endereco> enderecos;
+	private List<Endereco> enderecos = new ArrayList<>();
 	
 	
 	public Long getId() {

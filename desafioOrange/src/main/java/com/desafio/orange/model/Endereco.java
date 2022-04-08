@@ -21,28 +21,14 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "Por gentileza Informe o Logradouro!")
-	private String logradouro;
-	
-	@NotNull
-	private int numero;
-	
-	@NotBlank(message = "Por gentileza Informe o complemento!")
-	private String complemento;
-	
-	@NotBlank(message = "Por gentileza Informe o bairro!")
-	private String bairro;
-	
-	@NotBlank(message = "Por gentileza Informe a cidade!")
-	private String cidade;
-	
-	@NotBlank(message = "Por gentileza Informe o estado!")
-	private String estado;
-	
-	@NotBlank(message = "Por gentileza Informe o CEP!")
-	private String CEP;
 
-	//ligação muitos para um
+	private String logradouro;
+	private int numero;
+	private String complemento;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private String CEP;
 	@ManyToOne(optional = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
@@ -121,7 +107,21 @@ public class Endereco {
 		this.usuario = usuario;
 	}
 	
-	
+	public Endereco(){
+
+	}
+
+	public Endereco(Long id, String logradouro, int numero, String complemento, String bairro, String cidade, String estado, String CEP, Usuario usuario) {
+		this.id = id;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.CEP = CEP;
+		this.usuario = usuario;
+	}
 
 	@Override
 	public int hashCode() {

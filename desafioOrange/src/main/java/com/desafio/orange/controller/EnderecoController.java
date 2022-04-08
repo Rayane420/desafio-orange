@@ -2,6 +2,7 @@ package com.desafio.orange.controller;
 
 import java.util.List;
 
+import com.desafio.orange.dto.EnderecoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,32 +19,31 @@ import com.desafio.orange.repository.EnderecoRepository;
 
 
 @RestController
-@RequestMapping
+@RequestMapping("/enderecos")
 public class EnderecoController {
 
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+
+
+	@GetMapping
+	public List<EnderecoDto> listar(){
+		List<Endereco> enderecos = enderecoRepository.findAll();
+		return EnderecoDto.converter(enderecos);
+	}
+
+	@GetMapping("/{id}")
+	public Endereco listarUm(@PathVariable long id){
+		return enderecoRepository.findById(id);
+	}
 	
-	
-	/** Cadastro de Endereços ---------*/
 	@PostMapping("/endereco")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Endereco salvar(@RequestBody Endereco endereco) {
 		return enderecoRepository.save(endereco);
 	}
 	
-	/** Listando Endereços ---------*/
-	@GetMapping("/endereco")
-	public List<Endereco> listar(){
-		return enderecoRepository.findAll();
-	}
-	
-	/** Listando Endereços ---------*/
-	
-	@GetMapping("/endereco/{id}") 
-	public Endereco listarUm(@PathVariable long id){ 
-		return enderecoRepository.findById(id); //usando o método criado para listar um unico endereço
-	}
+
 	
 	
 	

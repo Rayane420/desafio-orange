@@ -34,15 +34,12 @@ public class UsuarioController {
 		return UsuarioDto.converter(usuarios);
 	}
 
-	//Detalhando Endereços por Usuário
+	//Detalhando Endereços do Usuário
 	@GetMapping("/enderecos/{id}")
 	DetalharUsuarioDto detalhar(@PathVariable Long id){
 		Usuario usuario = usuarioRepository.getById(id);
 		return new DetalharUsuarioDto(usuario);
 	}
-
-
-
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)

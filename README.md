@@ -22,5 +22,5 @@ Postman: Para testar as requisições da API
 <ul>
   <li>Cadastro de Usuário</li>
   <li>Cadastro de Endereços</li>
-  <li>Listagem dos endereços de acordo com um usuário específico</li>
+  <li>Listagem dos endereços por usuários</li>
 </ul>

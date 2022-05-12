@@ -1,6 +1,6 @@
 ## Desafio Orange talents
 
-Desafio realizado para a segunda fase do processo seletivo da Orange Talents
+Desafio realizado para a segunda fase do processo seletivo do Orange Talents
 
 #### 💡 Qual o objetivo do projeto?
 Criar uma API REST com Java e Spring para realizar controle de endereços de usuários.

@@ -24,3 +24,23 @@ Postman: Para testar as requisições da API
   <li>Cadastro de Endereços</li>
   <li>Listagem dos endereços por usuários</li>
 </ul>
+
+
+### 🚨🔧Pré-requisitos 
+Os seguintes itens devem estar instalados em seu computador para utilizar essa aplicação:
+- Java 11 ou superior (JDK - pode ser encontrado no site da Oracle)
+- Postgresql
+- Ide de sua preferência, nesse caso utilizei a ide intellij idea
+
+### 🖥️🖱️Executando Localmente
+Essa é uma api construída usando Spring Boot e Maven, você deverá ter no mínimo o java 11 instalado na sua máquina para realizar testes nela.
+
+Para ter uma cópia desse projeto na sua máquina basta executar a linha de comando abaixo na pasta que o projeto ficará salvo:
+
+```
+git clone https://github.com/Rayane420/desafio-orange.git
+```
+
+### 📭Caso você encontre um bug/ponto de melhoria nessa aplicação
+
+Você poderá enviar seu report aqui: https://github.com/Rayane420/desafio-orange/issues

@@ -2,10 +2,15 @@ package com.desafio.orange.controller;
 
 import com.desafio.orange.dto.DetalharUsuarioDto;
 
-import com.desafio.orange.dto.UsuarioDto;
+import com.desafio.orange.dto.input.EnderecoInput;
+import com.desafio.orange.dto.input.UsuarioInput;
+import com.desafio.orange.dto.output.UsuarioOutput;
 
+import com.desafio.orange.service.UsuarioService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,35 +24,24 @@ import com.desafio.orange.repository.UsuarioRepository;
 
 import java.util.List;
 
-
+@RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "/usuarios")
+@RequestMapping(value = "/usuario")
 public class UsuarioController {
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private static UsuarioService usuarioService;
 
 	//Listando todos os usuários
 	@GetMapping
-	List<UsuarioDto> listar(){
-		List<Usuario> usuarios = usuarioRepository.findAll();
-		return UsuarioDto.converter(usuarios);
+	ResponseEntity<List<UsuarioOutput>> listar(){
+		List<UsuarioOutput> usuarios = usuarioService.findAll();
+		return ResponseEntity.status(HttpStatus.OK).body(usuarios);
 	}
 
-	//Detalhando Endereços do Usuário
-	@GetMapping("/enderecos/{id}")
-	DetalharUsuarioDto detalhar(@PathVariable Long id){
-		Usuario usuario = usuarioRepository.getById(id);
-		return new DetalharUsuarioDto(usuario);
+	@PostMapping("/cadastrar")
+	ResponseEntity<String> salvar(@RequestBody UsuarioInput usuario) {
+		var body = usuarioService.cadastrar(usuario);
+		return ResponseEntity.status(HttpStatus.CREATED).body("Usuario cadastrado com sucesso");
 	}
-
-	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
-	Usuario salvar(@RequestBody Usuario usuario) {
-		return usuarioRepository.save(usuario);
-	}
-	
-
-	
 	
 }

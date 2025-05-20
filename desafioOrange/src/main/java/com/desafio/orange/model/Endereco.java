@@ -2,21 +2,15 @@ package com.desafio.orange.model;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@Entity
 public class Endereco {
 
 	@Id
@@ -28,7 +22,7 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 	private String estado;
-	private String CEP;
+	private String cep;
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
